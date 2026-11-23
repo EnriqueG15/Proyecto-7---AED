@@ -1,6 +1,8 @@
 #ifndef MATRIZ_LISTAS_H
 #define MATRIZ_LISTAS_H
 
+#include <stdbool.h>
+
 typedef struct Nodo {
     int fila;
     int col;
@@ -17,5 +19,12 @@ typedef struct MatrizDispersa {
     Nodo** cabeceras_col;
     Nodo* avail;
 } MatrizDispersa;
+
+MatrizDispersa* crearMatriz(int m, int n);
+void destruirMatrizDispersa(MatrizDispersa* M);
+void insertarCalificacion(MatrizDispersa* M, int i, int j, float val);
+float consultarCalificacion(const MatrizDispersa* M, int i, int j);
+void eliminarCalificacion(MatrizDispersa* M, int i, int j);
+void imprimirReporteMemoria(const MatrizDispersa* M);
 
 #endif
